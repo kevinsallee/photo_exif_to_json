@@ -10,7 +10,7 @@ But since it's probably too complicated, just do:
 # Running
 
 From the root:
-`./export_data.py {FOLDER_PATH} {JSON_FILEPATH}`
+`python export_data.py {FOLDER_PATH} {JSON_FILEPATH}`
 
-(`./export_data.py --help` if you forget which arg goes first)
+(`python export_data.py --help` if you forget which arg goes first)
 
