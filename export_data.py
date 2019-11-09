@@ -9,7 +9,8 @@ from PIL.ExifTags import TAGS
 @click.command()
 @click.argument("folder_path")
 @click.argument("json_filepath")
-def export_exif_data(folder_path, json_filepath):
+@click.option('--wh', is_flag=True, help="only export width and height")
+def export_exif_data(folder_path, json_filepath, wh):
     export_data = {}
     for f in os.listdir(folder_path):
         full_path = os.path.join(folder_path, f)
@@ -18,7 +19,7 @@ def export_exif_data(folder_path, json_filepath):
         width, height = pil_image.size
         export_data[image_name] = {"width": width, "height": height}
         exif_data = pil_image._getexif()
-        if exif_data:
+        if exif_data and not wh:
             for (k, v) in exif_data.items():
                 export_data[image_name][f"{TAGS.get(k)}"] = f"{v}"
     with open(json_filepath, "w") as w_handle:
