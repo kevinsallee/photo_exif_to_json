@@ -10,11 +10,14 @@ But since it's probably too complicated, just do:
 # Running
 
 From the root:
-`python3 export_data.py {FOLDER_PATH} {JSON_FILEPATH}`
 
-`python3 export_data.py -- wh {FOLDER_PATH} {JSON_FILEPATH}`
+```
+python3 export_data.py {FOLDER_PATH} {JSON_FILEPATH}
 
-with `--wh` option, it will only export width and height data.
+# with `--wh` option, it will only export width and height data.
+python3 export_data.py -- wh {FOLDER_PATH} {JSON_FILEPATH}
+```
+
 
 (`python3 export_data.py --help` if you forget which arg goes first)
 
